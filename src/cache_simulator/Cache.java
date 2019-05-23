@@ -1,7 +1,7 @@
 
 package cache_simulator;
 
-public class Data {
+public class Cache {
     boolean validade;
     Integer indice;
     Integer tag;

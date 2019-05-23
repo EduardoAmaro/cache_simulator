@@ -18,13 +18,13 @@ public class GeradorMemProg {
                 numGerado = r.nextInt(10);
                 outFile.println(numGerado);
                 out.writeInt(numGerado);
-                System.out.println(numGerado);
+                //System.out.println(numGerado);
             }
             for (int i = 0; i < 100; i++) {
                 numGerado = r.nextInt(1000);
                 outFile.println(numGerado);
                 out.writeInt(numGerado);
-                System.out.println(numGerado);
+                //System.out.println(numGerado);
             }
             outFile.close();
             outFileBin.close();
