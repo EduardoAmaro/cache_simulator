@@ -1,14 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package cache_simulator;
 
-/**
- *
- * @author eduardo
- */
 public class Bloco {
+    Integer validade; //-1 [inicial (miss compulsório)], 0 (vazio), 1(cheio)
+    String tag;
     
+    public Bloco(){
+        this.tag = "";
+        this.validade = -1;
+    }
 }
