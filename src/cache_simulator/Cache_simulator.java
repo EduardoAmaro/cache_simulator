@@ -51,7 +51,10 @@ public class Cache_simulator {
         }
         System.out.println(enderecos.size());
         
-        Cache cache = new Cache(nsets,assoc,bsize);
+        Cache cacheL1 = new Cache(nsets,assoc,bsize);
+        
+        cacheL1.getNindice();
+        
     }
 
     public static String preencheBinario(String endereco) {
