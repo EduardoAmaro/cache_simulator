@@ -18,11 +18,6 @@ public class Cache_simulator {
         Integer nsets = Integer.parseInt(config.split(":")[0]);
         Integer bsize = Integer.parseInt(config.split(":")[1]);
         Integer assoc = Integer.parseInt(config.split(":")[2]);
-        
-        System.out.println(nsets);
-        System.out.println(bsize);
-        System.out.println(assoc);
-        System.out.println(arquivo);
 
         InputStream input;
         try {
@@ -53,8 +48,16 @@ public class Cache_simulator {
         
         Cache cacheL1 = new Cache(nsets,assoc,bsize);
         
-        cacheL1.getNindice();
+        //teste splits e tamanhos
+        System.out.println("\n\n");
+        System.out.println(cacheL1.getNtag() + " " + cacheL1.getNindice() + " " + cacheL1.getNoffset());
+        System.out.println(enderecos.get(0));
+        System.out.print(cacheL1.getSplitTag(enderecos.get(0))+"|");
+        System.out.println(cacheL1.getSplitIndice(enderecos.get(0)));
         
+        System.out.println(cacheL1.busca(enderecos.get(0)));
+        
+     
     }
 
     public static String preencheBinario(String endereco) {
