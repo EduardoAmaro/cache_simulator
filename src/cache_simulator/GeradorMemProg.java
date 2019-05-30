@@ -4,8 +4,15 @@ import java.io.*;
 import java.util.Random;
 
 public class GeradorMemProg {
+    private Integer range;
+    private Integer qtdEnderecos;
     
-    public static void createFiles() {
+    public GeradorMemProg(Integer range, Integer qtdEnderecos){
+        this.range = range;
+        this.qtdEnderecos = qtdEnderecos;
+    }
+    
+    public void createFiles() {
         try {
             File file = new File("arqTexto1.txt");
             PrintWriter outFile = new PrintWriter(new FileWriter(file));
@@ -14,18 +21,13 @@ public class GeradorMemProg {
 
             int numGerado = 0;
             Random r = new Random();
-            for (int i = 0; i < 100; i++) {
-                numGerado = r.nextInt(10);
+            
+            for (int i = 0; i < getQtdEnderecos(); i++) {
+                numGerado = r.nextInt(getRange());
                 outFile.println(numGerado);
                 out.writeInt(numGerado);
-                //System.out.println(numGerado);
             }
-            for (int i = 0; i < 100; i++) {
-                numGerado = r.nextInt(1000);
-                outFile.println(numGerado);
-                out.writeInt(numGerado);
-                //System.out.println(numGerado);
-            }
+            
             outFile.close();
             outFileBin.close();
         } catch (FileNotFoundException exception) {
@@ -33,5 +35,33 @@ public class GeradorMemProg {
         } catch (IOException exception) {
             System.out.println("Erro de I/O: " + exception);
         }
+    }
+
+    /**
+     * @return the range
+     */
+    public Integer getRange() {
+        return range;
+    }
+
+    /**
+     * @param range the range to set
+     */
+    public void setRange(Integer range) {
+        this.range = range;
+    }
+
+    /**
+     * @return the qtdEnderecos
+     */
+    public Integer getQtdEnderecos() {
+        return qtdEnderecos;
+    }
+
+    /**
+     * @param qtdEnderecos the qtdEnderecos to set
+     */
+    public void setQtdEnderecos(Integer qtdEnderecos) {
+        this.qtdEnderecos = qtdEnderecos;
     }
 }

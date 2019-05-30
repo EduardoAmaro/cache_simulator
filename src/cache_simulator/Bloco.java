@@ -4,7 +4,6 @@ public class Bloco {
     private Integer validade; //0 (vazio), 1(cheio)
     private String tag;
     
-    
     public Bloco(){
         this.tag = "";
         this.validade = 0;
